@@ -157,10 +157,10 @@ const communities = deals.reduce((acc, deal) => {
     return acc;
 }, {});
 
-// 2. Logger l'objet communities
+// 2. 
 console.log('Deals by community :', communities);
 
-// 3. Logger le nombre de deals par communauté
+// 3. 
 for (const community in communities) {
     console.log(` ${community} : ${communities[community].length} deals`);
 }
@@ -170,6 +170,16 @@ for (const community in communities) {
 // 🎯 TODO 9: Sort by price for each community
 // 1. For each community, sort the deals by discount price, from highest to lowest
 // 2. Log the sort
+
+// 1. 
+for (const community in communities) {
+    communities[community].sort((a, b) => b.discount - a.discount); 
+}
+
+// 2. 
+console.log('deals sorted by price for each community :', communities);
+
+
 
 // 🎯 TODO 10: Sort by date for each community
 // 1. For each set, sort the deals by date, from old to recent
