@@ -171,6 +171,7 @@ for (const community in communities) {
 // 1. For each community, sort the deals by discount price, from highest to lowest
 // 2. Log the sort
 
+
 // 1. 
 for (const community in communities) {
     communities[community].sort((a, b) => b.discount - a.discount); 
@@ -184,6 +185,15 @@ console.log('deals sorted by price for each community :', communities);
 // 🎯 TODO 10: Sort by date for each community
 // 1. For each set, sort the deals by date, from old to recent
 // 2. Log the sort
+
+// 1. 
+for (const community in communities) {
+    communities[community].sort((a, b) => new Date(a.published) - new Date(b.published)); 
+}
+
+// 2. 
+console.log('Deals sorted by date for each community :', communities);
+
 
 
 /**
