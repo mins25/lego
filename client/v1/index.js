@@ -56,7 +56,7 @@ console.log('Number of deals', numberOfDeals);
 // 3. Log how many shopping communities we have
 
 // 1.
-const shoppingCommunityNames = deals.map(deal => deal.website);
+const shoppingCommunityNames = MY_FAVORITE_DEALERS.map(dealer => dealer.name);
 // 2.
 console.log('list of shopping community name:', shoppingCommunityNames);
 // 3.
