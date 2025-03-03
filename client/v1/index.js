@@ -30,6 +30,8 @@ console.log(MY_FAVORITE_DEALERS[0]);
 // 1. Create a new variable and assign it the link of the lego set with the highest reduction I can find on these 2 websites
 // 2. Log the variable
 
+const linkWithHighestReduction = "https://www.dealabs.com/bons-plans/le-croiseur-dassaut-de-classe-venator-de-la-republique-ucs-lego-star-wars-75367-3009673"
+
 /**
  * 🧱
  * Easy 😁?
