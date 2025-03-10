@@ -518,13 +518,38 @@ console.log(`p25: ${stats.p25.toFixed(2)}€`);
 // // 1. Log if we have very old items (true or false)
 // // A very old item is an item `published` more than 3 weeks ago.
 
+const items = [
+  {
+    title: "Item 1",
+    published: "Wed, 07 Feb 2024 10:00:00 GMT",
+    uuid: "12345"
+  },
+  {
+    title: "Item 2",
+    published: "Mon, 22 Jan 2024 15:30:00 GMT",
+    uuid: "67890"
+  }
+];
+
+const threeWeeksAgo = new Date();
+threeWeeksAgo.setDate(threeWeeksAgo.getDate() - 21);
+
+const hasVeryOldItems = items.some(item => new Date(item.published) < threeWeeksAgo);
+console.log("Has very old items:", hasVeryOldItems);
+
 // 🎯 TODO 13: Find a specific item
 // 1. Find the item with the uuid `f2c5377c-84f9-571d-8712-98902dcbb913`
 // 2. Log the item
+const targetUuid = "f2c5377c-84f9-571d-8712-98902dcbb913";
+const foundItem = items.find(item => item.uuid === targetUuid);
+console.log("Found item:", foundItem || "Item not found");
 
 // 🎯 TODO 14: Delete a specific item
 // 1. Delete the item with the uuid `f2c5377c-84f9-571d-8712-98902dcbb913`
 // 2. Log the new list of items
+
+const updatedItems = items.filter(item => item.uuid !== targetUuid);
+console.log("Updated list of items:", updatedItems);
 
 // 🎯 TODO 5: Save a favorite item
 // We declare and assign a variable called `sealedCamera`
@@ -543,7 +568,11 @@ let camera = sealedCamera;
 camera.favorite = true;
 
 // 1. Log `sealedCamera` and `camera` variables
+console.log("sealedCamera:", sealedCamera);
+console.log("camera:", camera);
 // 2. What do you notice?
+// The `sealedCamera` object remains unchanged because we created a shallow copy using the spread operator `{ ...sealedCamera }`.
+// The `camera` object has a new property `favorite: true`.
 
 // we make (again) a new assignment again
 sealedCamera = {
@@ -555,7 +584,8 @@ sealedCamera = {
 };
 
 // 3. Update `camera` property with `favorite` to true WITHOUT changing sealedCamera properties
-
+camera = { ...camera, favorite: true };
+console.log("Updated camera:", camera);
 
 // 🎯 TODO 11: Compute the profitability
 // From a specific deal called `deal`
@@ -568,6 +598,8 @@ const deal = {
 
 // 1. Compute the potential highest profitability based on the VINTED items
 // 2. Log the value
+const profitability = deal.retail - deal.price;
+console.log("Potential highest profitability:", profitability.toFixed(2), "€");
 
 
 
@@ -580,3 +612,6 @@ const deal = {
 // 🎯 LAST TODO: Save in localStorage
 // 1. Save MY_FAVORITE_DEALERS in the localStorage
 // 2. log the localStorage
+
+localStorage.setItem("MY_FAVORITE_DEALERS", JSON.stringify(MY_FAVORITE_DEALERS));
+console.log("localStorage MY_FAVORITE_DEALERS:", localStorage.getItem("MY_FAVORITE_DEALERS"));
