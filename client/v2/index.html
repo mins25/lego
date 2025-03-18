@@ -1,75 +1,132 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>🧱 Lego | Predictability of a lego set deal</title>
-  </head>
-  <body>
-    <h1>Lego</h1>
-    <section id="options">
-      <div id="show">
+<head>
+  <meta charset="utf-8">
+  <title>Lego Deals Dashboard</title>
+  <style>
+    /* Styles de base pour une présentation claire */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 20px;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    section {
+      background-color: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    h2 {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+      margin-top: 0;
+    }
+    .options, .filters, .pagination, .indicators {
+      margin-bottom: 10px;
+    }
+    .deal, .vinted-deal {
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+    }
+    .deal:last-child, .vinted-deal:last-child {
+      border-bottom: none;
+    }
+    label {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lego Deals Dashboard</h1>
+  </header>
+  
+  <!-- Section Dealabs -->
+  <section id="dealabs-section">
+    <h2>Dealabs Deals</h2>
+    <div class="options">
+      <div>
         <label for="show-select">Show:</label>
-        <select name="show" id="show-select">
+        <select id="show-select">
           <option value="6">6</option>
           <option value="12">12</option>
           <option value="24">24</option>
         </select>
       </div>
-      <div id="page">
+      <div class="pagination">
         <label for="page-select">Go to page:</label>
-        <select name="page" id="page-select"> </select>
+        <select id="page-select"></select>
       </div>
-      <div id="filters">
-        <span>By best discount</span>
-        <span>By most commented</span>
-        <span>By hot deals</span>
-      </div>
-      <div id="sort">
+    </div>
+    <div class="filters">
+      <label><input type="checkbox" id="filter-best-discount"> Best discount (> 50%)</label>
+      <label><input type="checkbox" id="filter-most-commented"> Most commented (> 15 comments)</label>
+      <label><input type="checkbox" id="filter-hot-deals"> Hot deals (temperature > 100)</label>
+      <div>
         <label for="sort-select">Sort:</label>
-        <select name="sort" id="sort-select">
+        <select id="sort-select">
           <option value="price-asc">Cheaper</option>
           <option value="price-desc">Expensive</option>
           <option value="date-asc">Recently published</option>
           <option value="date-desc">Anciently published</option>
         </select>
       </div>
-    </section>
-    <section id="lego">
-      <h2>Lego sets</h2>
+    </div>
+    <div class="indicators">
+      <span>Number of deals: <span id="nbDeals">0</span></span>
+    </div>
+    <div id="deals"></div>
+  </section>
+  
+  <!-- Section Vinted -->
+  <section id="vinted-section">
+    <h2>Vinted Deals</h2>
+    <div class="options">
       <div>
-        <label>Lego set id:</label>
-        <select id="lego-set-id-select"></select> 
-      </div>
-    </section>
-    <section id="indicators">
-      <h2>Indicators</h2>
-      <div>
-        <span>Number of deals</span>
-        <span id="nbDeals">0</span>
-      </div>
-      <div>
-        <span>Number of sales</span>
-        <span id="nbSales">0</span>
+        <label for="vinted-set-id-select">Lego set id:</label>
+        <select id="vinted-set-id-select"></select>
       </div>
       <div>
-        <span>p5 sales price value</span>
-        <span>0</span>
+        <label for="vinted-show-select">Show:</label>
+        <select id="vinted-show-select">
+          <option value="6">6</option>
+          <option value="12">12</option>
+          <option value="24">24</option>
+        </select>
+      </div>
+      <div class="pagination">
+        <label for="vinted-page-select">Go to page:</label>
+        <select id="vinted-page-select"></select>
       </div>
       <div>
-        <span>p25 sales price value</span>
-        <span>0</span>
+        <label for="vinted-sort-select">Sort:</label>
+        <select id="vinted-sort-select">
+          <option value="none">No sorting</option>
+          <option value="price-asc">Price (Low to High)</option>
+          <option value="price-desc">Price (High to Low)</option>
+          <option value="date-asc">Date (Oldest First)</option>
+          <option value="date-desc">Date (Newest First)</option>
+        </select>
       </div>
-      <div>
-        <span>p50 sales price value</span>
-        <span>0</span>
-      </div>
-      <div>
-        <span>Lifetime value</span>
-        <span>10 days</span>
-      </div>
-    </section>
-    <section id="deals"></section>
-    <script type="text/javascript" charset="UTF-8" src="utils.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="portfolio.js"></script>
-  </body>
+    </div>
+    <div class="indicators" id="vinted-indicators">
+      <div>Total number of sales: <span id="vinted-total-sales">0</span></div>
+      <div>Average price: <span id="vinted-average-price">0</span></div>
+      <div>p5 price: <span id="vinted-p5-price">0</span></div>
+      <div>p25 price: <span id="vinted-p25-price">0</span></div>
+      <div>p50 price: <span id="vinted-p50-price">0</span></div>
+      <div>Lifetime value: <span id="vinted-lifetime">0</span></div>
+    </div>
+    <div id="vinted-deals-list"></div>
+  </section>
+  
+  <script src="utils.js"></script>
+  <script src="portfolio.js"></script>
+</body>
 </html>
