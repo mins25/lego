@@ -1,0 +1,102 @@
+[
+  {
+    "discount": 60,
+    "price": 10.04,
+    "title": "Vêtements & Accessoires T-shirt à manches longues – Kaki foncé"
+  },
+  {
+    "discount": 40,
+    "price": 12,
+    "title": "LEGO Duplo 10425 - Set d'extension : Les rails et le tunnel du train"
+  },
+  {
+    "discount": 39,
+    "price": 12.12,
+    "title": "LEGO Duplo 10444 - Le jardin créatif et les fleurs"
+  },
+  {
+    "discount": 36,
+    "price": 44.87,
+    "title": "LEGO Disney 43262 - Les robes de Maléfique et Cruella D’Enfer"
+  },
+  {
+    "discount": 36,
+    "price": 8.29,
+    "title": "LEGO City 60442 - Voiture de course McLaren avec pilote de F1"
+  },
+  {
+    "discount": 35,
+    "price": 64.99,
+    "title": "LEGO Wicked 75684 - Bienvenue à Emerald City"
+  },
+  {
+    "discount": 35,
+    "price": 35.99,
+    "title": "LEGO Wicked 75682 - Figurines d’Elphaba et de Glinda"
+  },
+  {
+    "discount": 35,
+    "price": 26.04,
+    "title": "LEGO Friends 42650 - Boutique d’accessoires pour animaux de compagnie"
+  },
+  {
+    "discount": 35,
+    "price": 25.99,
+    "title": "LEGO Classic 11042 - La boîte créative du bonheur"
+  },
+  {
+    "discount": 35,
+    "price": 22.79,
+    "title": "LEGO Classic 11041 - Les dinosaures créatifs"
+  },
+  {
+    "discount": 35,
+    "price": 19.49,
+    "title": "LEGO Icons 10344 - Le bambou de la chance"
+  },
+  {
+    "discount": 35,
+    "price": 19.49,
+    "title": "LEGO Icons 10343 - L’orchidée miniature"
+  },
+  {
+    "discount": 35,
+    "price": 19.49,
+    "title": "LEGO Creator 31169 - La machine à écrire avec des fleurs"
+  },
+  {
+    "discount": 35,
+    "price": 19.49,
+    "title": "LEGO Friends 42649 - La confiserie de Heartlake City"
+  },
+  {
+    "discount": 35,
+    "price": 19.49,
+    "title": "LEGO Friends 42672 - La valise créative de plage"
+  },
+  {
+    "discount": 35,
+    "price": 19.49,
+    "title": "LEGO City 60454 - Le camping-car d’aventures"
+  },
+  {
+    "discount": 35,
+    "price": 16.29,
+    "title": "LEGO City 60453 - Le véhicule de secours de la plage"
+  },
+  {
+    "discount": 35,
+    "price": 16.29,
+    "title": "LEGO Creator 31163 - Le chat joueur"
+  },
+  {
+    "discount": 35,
+    "price": 16.29,
+    "title": "LEGO Creator 31170 - Animaux sauvages : le flamant rose"
+  },
+  {
+    "discount": 35,
+    "price": 16.29,
+    "title": "LEGO Ninjago 71828 - La voiture de course à rétrofriction de Lloyd"
+  }
+]
