@@ -27,6 +27,10 @@ async function createIndexes() {
   await db.collection('deals').createIndex({ published: -1 });
 }
 
+app.get('/', (req, res) => {
+  res.json({ ack: true });
+});
+
 /**
  * Pour les deals, on stocke "published" sous forme d'ISO string (ex. "2025-04-06T13:30:17.000Z").
  * On peut comparer ces dates en les convertissant en objet Date.
@@ -152,3 +156,6 @@ async function startServer() {
 }
 
 startServer().catch(console.error);
+module.exports = app;
+
+
